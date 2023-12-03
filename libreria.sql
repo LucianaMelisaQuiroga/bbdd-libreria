@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-11-2023 a las 00:19:11
+-- Tiempo de generación: 03-12-2023 a las 02:14:53
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.3
 
@@ -52,7 +52,7 @@ INSERT INTO `autores` (`autor_id`, `apellido`, `nombre`, `telefono`, `direccion`
 ('274-80-9391', 'Ocampo', 'Victoria', '48342919', '', 'Beccar', 'BA', '4609', 1),
 ('341-22-1782', 'Walsh', 'Rodolfo', '98430462', '', 'Choele Choel', 'R', '6044', 0),
 ('409-56-7008', 'Lugones', 'Leopoldo', '46589932', '', 'Río Seco', 'CO', '4705', 1),
-('427-17-2319', 'Echeverría', 'Esteba', '48367128', '', '', '', '', 1),
+('427-17-2319', 'Echeverría', 'Esteban', '48367128', '', '', '', '', 1),
 ('472-27-2349', 'Kafka', 'Frank', '79386445', '', 'Praga', 'AU', '5428', 1),
 ('486-29-1786', 'Sábato', 'Ernesto', '45854620', '', 'Rojas', 'BA', '4130', 1),
 ('527-72-3246', 'Borges', 'Jorge Luis', '62972723', '', 'Buenos Aires', 'CF', '7215', 0),
@@ -109,57 +109,80 @@ CREATE TABLE `empleados` (
   `apellido` varchar(30) DEFAULT NULL,
   `puesto_id` smallint(6) DEFAULT NULL,
   `editorial_id` char(4) DEFAULT NULL,
-  `fecha_ingreso` datetime DEFAULT NULL
+  `fecha_ingreso` datetime DEFAULT NULL,
+  `Permanencia` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `empleados`
 --
 
-INSERT INTO `empleados` (`empleado_id`, `nombre`, `apellido`, `puesto_id`, `editorial_id`, `fecha_ingreso`) VALUES
-('A-C71970F', 'Aria', 'Cruz', 10, '1389', '1991-10-26 00:00:00'),
-('A-R89858F', 'Annette', 'Roulet', 6, '9999', '1990-02-21 00:00:00'),
-('AMD15433F', 'An', 'Devo', 3, '9952', '1991-07-16 00:00:00'),
-('ARD36773F', 'Anabela', 'Domingues', 8, '0877', '1993-01-27 00:00:00'),
-('CFH28514M', 'Carlos', 'Hernandez', 5, '9999', '1989-04-21 00:00:00'),
-('CGS88322F', 'Carine', 'Schmitt', 13, '1389', '1992-07-07 00:00:00'),
-('DBT39435M', 'Daniel', 'Tonini', 11, '0877', '1990-01-01 00:00:00'),
-('DWR65030M', 'Diego', 'Roel', 6, '1389', '1991-12-16 00:00:00'),
-('ENL44273F', 'Elizabeth', 'Lincol', 14, '0877', '1990-07-24 00:00:00'),
-('F-C16315M', 'Francisco', 'Chang', 4, '9952', '1990-11-03 00:00:00'),
-('GHT50241M', 'Gary', 'Thomas', 9, '0736', '1988-08-09 00:00:00'),
-('H-B39728F', 'Hele', 'Bennett', 12, '0877', '1989-09-21 00:00:00'),
-('HAN90777M', 'Helvetius', 'Nagy', 7, '9999', '1993-03-19 00:00:00'),
-('HAS54740M', 'Howard', 'Snyder', 12, '0736', '1988-11-19 00:00:00'),
-('JYL26161F', 'Janine', 'Labrune', 5, '9901', '1991-05-26 00:00:00'),
-('KFJ64308F', 'Kari', 'Josephs', 14, '0736', '1992-10-17 00:00:00'),
-('KJJ92907F', 'Karla', 'Jablonski', 9, '9999', '1994-03-11 00:00:00'),
-('L-B31947F', 'Lesley', 'Brow', 7, '0877', '1991-02-13 00:00:00'),
-('LAL21447M', 'Laurence', 'Lebiha', 5, '0736', '1990-06-03 00:00:00'),
-('M-L67958F', 'Maria', 'Larsso', 7, '1389', '1992-03-27 00:00:00'),
-('M-P91209M', 'Manuel', 'Pereira', 8, '9999', '1989-01-09 00:00:00'),
-('M-R38834F', 'Martine', 'Rance', 9, '0877', '1992-02-05 00:00:00'),
-('MAP77183M', 'Miguel', 'Paolino', 11, '1389', '1992-12-07 00:00:00'),
-('MAS70474F', 'Margaret', 'Smith', 9, '1389', '1988-09-29 00:00:00'),
-('MFS52347M', 'Marti', 'Sommer', 10, '0736', '1990-04-13 00:00:00'),
-('MGK44605M', 'Matti', 'Karttune', 6, '0736', '1994-05-01 00:00:00'),
-('MJP25939M', 'Maria', 'Pontes', 5, '1756', '1989-03-01 00:00:00'),
-('MMS49649F', 'Mary', 'Saveley', 8, '0736', '1993-06-29 00:00:00'),
-('PCM98509F', 'Patricia', 'McKenna', 11, '9999', '1989-08-01 00:00:00'),
-('PDI47470M', 'Palle', 'Ibse', 7, '0736', '1993-05-09 00:00:00'),
-('PHF38899M', 'Peter', 'Franke', 10, '0877', '1992-05-17 00:00:00'),
-('PMA42628M', 'Paolo', 'Accorti', 13, '0877', '1992-08-27 00:00:00'),
-('POK93028M', 'Pirkko', 'Koskitalo', 10, '9999', '1993-11-29 00:00:00'),
-('PSA89086M', 'Pedro', 'Afonso', 14, '1389', '1990-12-24 00:00:00'),
-('PSP68661F', 'Paula', 'Parente', 8, '1389', '1994-01-19 00:00:00'),
-('PTC11962M', 'Philip', 'Cramer', 2, '9952', '1989-11-11 00:00:00'),
-('PXH22250M', 'Paul', 'Henriot', 5, '0877', '1993-08-19 00:00:00'),
-('R-M53550M', 'Roland', 'Mendel', 11, '0736', '1991-09-05 00:00:00'),
-('RBM23061F', 'Rita', 'Muller', 5, '1622', '1993-10-09 00:00:00'),
-('SKO22412M', 'Sve', 'Ottlieb', 5, '1389', '1991-04-05 00:00:00'),
-('TPO55093M', 'Timothy', 'O\'Rourke', 13, '0736', '1988-06-19 00:00:00'),
-('VPA30890F', 'Victoria', 'Ashworth', 6, '0877', '1990-09-13 00:00:00'),
-('Y-L77953M', 'Yoshi', 'Latimer', 12, '1389', '1989-06-11 00:00:00');
+INSERT INTO `empleados` (`empleado_id`, `nombre`, `apellido`, `puesto_id`, `editorial_id`, `fecha_ingreso`, `Permanencia`) VALUES
+('A-R89858F', 'Annette', 'Roulet', 6, '9999', '1990-02-21 00:00:00', 33),
+('ARD36773F', 'Anabela', 'Domingues', 8, '0877', '1993-01-27 00:00:00', 30),
+('CFH28514M', 'Carlos', 'Hernandez', 5, '9999', '1989-04-21 00:00:00', 34),
+('CGS88322F', 'Carine', 'Schmitt', 13, '1389', '1992-07-07 00:00:00', 31),
+('DBT39435M', 'Daniel', 'Tonini', 11, '0877', '1990-01-01 00:00:00', 33),
+('DWR65030M', 'Diego', 'Roel', 6, '1389', '1991-12-16 00:00:00', 31),
+('ENL44273F', 'Elizabeth', 'Lincol', 14, '0877', '1990-07-24 00:00:00', 33),
+('F-C16315M', 'Francisco', 'Chang', 4, '9952', '1990-11-03 00:00:00', 33),
+('H-B39728F', 'Hele', 'Bennett', 12, '0877', '1989-09-21 00:00:00', 34),
+('HAN90777M', 'Helvetius', 'Nagy', 7, '9999', '1993-03-19 00:00:00', 30),
+('HAS54740M', 'Howard', 'Snyder', 12, '0736', '1988-11-19 00:00:00', 35),
+('JYL26161F', 'Janine', 'Labrune', 5, '9901', '1991-05-26 00:00:00', 32),
+('KFJ64308F', 'Kari', 'Josephs', 14, '0736', '1992-10-17 00:00:00', 31),
+('KJJ92907F', 'Karla', 'Jablonski', 9, '9999', '1994-03-11 00:00:00', 29),
+('L-B31947F', 'Lesley', 'Brow', 7, '0877', '1991-02-13 00:00:00', 32),
+('LAL21447M', 'Laurence', 'Lebiha', 5, '0736', '1990-06-03 00:00:00', 33),
+('M-L67958F', 'Maria', 'Larsso', 7, '1389', '1992-03-27 00:00:00', 31),
+('M-R38834F', 'Martine', 'Rance', 9, '0877', '1992-02-05 00:00:00', 31),
+('MAP77183M', 'Miguel', 'Paolino', 11, '1389', '1992-12-07 00:00:00', 30),
+('MAS70474F', 'Margaret', 'Smith', 9, '1389', '1988-09-29 00:00:00', 35),
+('MFS52347M', 'Marti', 'Sommer', 10, '0736', '1990-04-13 00:00:00', 33),
+('MGK44605M', 'Matti', 'Karttune', 6, '0736', '1994-05-01 00:00:00', 29),
+('MJP25939M', 'Maria', 'Pontes', 5, '1756', '1989-03-01 00:00:00', 34),
+('MMS49649F', 'Mary', 'Saveley', 8, '0736', '1993-06-29 00:00:00', 30),
+('PCM98509F', 'Patricia', 'McKenna', 11, '9999', '1989-08-01 00:00:00', 34),
+('PDI47470M', 'Palle', 'Ibse', 7, '0736', '1993-05-09 00:00:00', 30),
+('PHF38899M', 'Peter', 'Franke', 10, '0877', '1992-05-17 00:00:00', 31),
+('PMA42628M', 'Paolo', 'Accorti', 13, '0877', '1992-08-27 00:00:00', 31),
+('POK93028M', 'Pirkko', 'Koskitalo', 10, '9999', '1993-11-29 00:00:00', 30),
+('PSA89086M', 'Pedro', 'Afonso', 14, '1389', '1990-12-24 00:00:00', 32),
+('PSP68661F', 'Paula', 'Parente', 8, '1389', '1994-01-19 00:00:00', 29),
+('PTC11962M', 'Philip', 'Cramer', 2, '9952', '1989-11-11 00:00:00', 34),
+('PXH22250M', 'Paul', 'Henriot', 5, '0877', '1993-08-19 00:00:00', 30),
+('R-M53550M', 'Roland', 'Mendel', 11, '0736', '1991-09-05 00:00:00', 32),
+('RBM23061F', 'Rita', 'Muller', 5, '1622', '1993-10-09 00:00:00', 30),
+('SKO22412M', 'Sve', 'Ottlieb', 5, '1389', '1991-04-05 00:00:00', 32),
+('TPO55093M', 'Timothy', 'O\'Rourke', 13, '0736', '1988-06-19 00:00:00', 35),
+('VPA30890F', 'Victoria', 'Ashworth', 6, '0877', '1990-09-13 00:00:00', 33),
+('Y-L77953M', 'Yoshi', 'Latimer', 12, '1389', '1989-06-11 00:00:00', 34);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `empleados_anteriores`
+--
+
+CREATE TABLE `empleados_anteriores` (
+  `empleado_id` char(9) NOT NULL,
+  `nombre` varchar(20) DEFAULT NULL,
+  `apellido` varchar(30) DEFAULT NULL,
+  `puesto_id` smallint(6) DEFAULT NULL,
+  `editorial_id` char(4) DEFAULT NULL,
+  `fecha_ingreso` datetime DEFAULT NULL,
+  `Permanencia` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `empleados_anteriores`
+--
+
+INSERT INTO `empleados_anteriores` (`empleado_id`, `nombre`, `apellido`, `puesto_id`, `editorial_id`, `fecha_ingreso`, `Permanencia`) VALUES
+('AMD15433F', 'An', 'Devo', 3, '9952', '1991-07-16 00:00:00', 32),
+('GHT50241M', 'Gary', 'Thomas', 9, '0736', '1988-08-09 00:00:00', 35),
+('M-P91209M', 'Manuel', 'Pereira', 8, '9999', '1989-01-09 00:00:00', 34),
+('A-C71970F', 'Aria', 'Cruz', 10, '1389', '1991-10-26 00:00:00', 32);
 
 -- --------------------------------------------------------
 
@@ -216,40 +239,41 @@ CREATE TABLE `libros` (
   `editorial_id` char(4) DEFAULT NULL,
   `precio` double DEFAULT NULL,
   `comentarios` varchar(200) DEFAULT NULL,
-  `fecha_publicacion` datetime DEFAULT NULL
+  `fecha_publicacion` datetime DEFAULT NULL,
+  `Precio_Publico` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `libros`
 --
 
-INSERT INTO `libros` (`libro_id`, `titulo`, `categoria`, `editorial_id`, `precio`, `comentarios`, `fecha_publicacion`) VALUES
-('BU1032', 'La invención de Morel', 'Novelas', '1389', 19.99, '', '1991-06-12 00:00:00'),
-('BU1033', 'El Imperio jesuítico', 'Ensayos', '0877', 22.98, NULL, '1904-06-12 00:00:00'),
-('BU1111', 'El castigo de Dios', 'Cuentos', '1389', 11.95, '', '1991-06-09 00:00:00'),
-('BU1112', 'Los casos del comisario Croce', 'Cuentos', '0736', 20, NULL, '2018-12-01 00:00:00'),
-('BU2075', 'De las cosas maravillosas', 'Ensayos', '0736', 29.9, '', '1991-06-30 00:00:00'),
-('BU7832', 'La mujer y su expresió', 'Ensayos', '1389', 19.99, '', '1991-06-22 00:00:00'),
-('MC2222', 'Crónicas del angel gris', 'Relato', '0877', 19.99, '', '1991-06-09 00:00:00'),
-('MC3021', 'El mundo contemporáneo', 'Historia', '0877', 29.9, '', '1991-06-18 00:00:00'),
-('MC3022', 'El silenciero', 'Novelas', '9901', 32, NULL, '1964-03-10 00:00:00'),
-('MC3026', 'The Psychology of Computer Cooking', 'Sin asignar', '0877', NULL, '', '2004-12-13 00:00:00'),
-('PC1035', 'Pantaleón y las visitadoras', 'Novelas', '1389', 22.95, '', '1991-06-30 00:00:00'),
-('PC8888', 'El matadero', 'Cuentos', '1389', 20, '', '1994-06-12 00:00:00'),
-('PC8889', 'Sangre de amor correspondido', 'Novelas', '1756', 13, NULL, '1982-01-01 00:00:00'),
-('PC9999', 'La robotización del hombre y otras páginas', 'Antologías', '1389', NULL, '', '2004-12-13 00:00:00'),
-('PS1372', 'La ciudad ausente', 'Novelas', '0877', 21.59, '', '1991-10-21 00:00:00'),
-('PS1373', 'Nadie nada nunca', 'Novelas', '1622', 20, NULL, '1980-06-12 00:00:00'),
-('PS2091', 'Caballo en el salitral', 'Antologías', '0736', 10.95, '', '1991-06-15 00:00:00'),
-('PS2092', 'Memoria romana', 'Cuentos', '9952', 13.5, NULL, '2018-05-29 00:00:00'),
-('PS2106', 'Vivir afuera', 'Novelas', '0736', 70, '', '1991-10-05 00:00:00'),
-('PS3333', 'Cuentos de Amor, de Locura y Muerte', 'Cuentos', '0736', 19.99, '', '1991-06-12 00:00:00'),
-('PS7777', 'Sobre héroes y tumbas', 'Novelas', '0736', 79.9, '', '1991-06-12 00:00:00'),
-('TC3218', 'La promesa', 'Novelas', '0877', 20.95, '', '1991-10-21 00:00:00'),
-('TC4203', 'La pasión según Trelew', 'Crónicas', '0877', 11.95, '', '1991-06-12 00:00:00'),
-('TC7777', 'La revolución en bicicleta', 'Novelas', '0877', 14.99, '', '1991-06-12 00:00:00'),
-('TC7778', 'La metamorfosis', 'Novelas', '9999', 18, NULL, '1975-05-05 00:00:00'),
-('TC7779', 'El juguete rabioso', 'Novelas', '9999', 22, NULL, '1964-01-15 00:00:00');
+INSERT INTO `libros` (`libro_id`, `titulo`, `categoria`, `editorial_id`, `precio`, `comentarios`, `fecha_publicacion`, `Precio_Publico`) VALUES
+('BU1032', 'La invención de Morel', 'Novelas', '1389', 19.99, '', '1991-06-12 00:00:00', 24.19),
+('BU1033', 'El Imperio jesuítico', 'Ensayos', '0877', 22.98, NULL, '1904-06-12 00:00:00', 27.81),
+('BU1111', 'El castigo de Dios', 'Cuentos', '1389', 11.95, '', '1991-06-09 00:00:00', 14.46),
+('BU1112', 'Los casos del comisario Croce', 'Cuentos', '0736', 20, NULL, '2018-12-01 00:00:00', 24.2),
+('BU2075', 'De las cosas maravillosas', 'Ensayos', '0736', 29.9, '', '1991-06-30 00:00:00', 36.18),
+('BU7832', 'La mujer y su expresió', 'Ensayos', '1389', 19.99, '', '1991-06-22 00:00:00', 24.19),
+('MC2222', 'Crónicas del angel gris', 'Relato', '0877', 19.99, '', '1991-06-09 00:00:00', 24.19),
+('MC3021', 'El mundo contemporáneo', 'Historia', '0877', 29.9, '', '1991-06-18 00:00:00', 36.18),
+('MC3022', 'El silenciero', 'Novelas', '9901', 32, NULL, '1964-03-10 00:00:00', 38.72),
+('MC3026', 'The Psychology of Computer Cooking', 'Sin asignar', '0877', NULL, '', '2004-12-13 00:00:00', NULL),
+('PC1035', 'Pantaleón y las visitadoras', 'Novelas', '1389', 22.95, '', '1991-06-30 00:00:00', 27.77),
+('PC8888', 'El matadero', 'Cuentos', '1389', 20, '', '1994-06-12 00:00:00', 24.2),
+('PC8889', 'Sangre de amor correspondido', 'Novelas', '1756', 13, NULL, '1982-01-01 00:00:00', 15.73),
+('PC9999', 'La robotización del hombre y otras páginas', 'Antologías', '1389', NULL, '', '2004-12-13 00:00:00', NULL),
+('PS1372', 'La ciudad ausente', 'Novelas', '0877', 21.59, '', '1991-10-21 00:00:00', 26.12),
+('PS1373', 'Nadie nada nunca', 'Novelas', '1622', 20, NULL, '1980-06-12 00:00:00', 24.2),
+('PS2091', 'Caballo en el salitral', 'Antologías', '0736', 10.95, '', '1991-06-15 00:00:00', 13.25),
+('PS2092', 'Memoria romana', 'Cuentos', '9952', 13.5, NULL, '2018-05-29 00:00:00', 16.34),
+('PS2106', 'Vivir afuera', 'Novelas', '0736', 70, '', '1991-10-05 00:00:00', 84.7),
+('PS3333', 'Cuentos de Amor, de Locura y Muerte', 'Cuentos', '0736', 19.99, '', '1991-06-12 00:00:00', 24.19),
+('PS7777', 'Sobre héroes y tumbas', 'Novelas', '0736', 79.9, '', '1991-06-12 00:00:00', 96.68),
+('TC3218', 'La promesa', 'Novelas', '0877', 20.95, '', '1991-10-21 00:00:00', 25.35),
+('TC4203', 'La pasión según Trelew', 'Crónicas', '0877', 11.95, '', '1991-06-12 00:00:00', 14.46),
+('TC7777', 'La revolución en bicicleta', 'Novelas', '0877', 14.99, '', '1991-06-12 00:00:00', 18.14),
+('TC7778', 'La metamorfosis', 'Novelas', '9999', 18, NULL, '1975-05-05 00:00:00', 21.78),
+('TC7779', 'El juguete rabioso', 'Novelas', '9999', 22, NULL, '1964-01-15 00:00:00', 26.62);
 
 -- --------------------------------------------------------
 
